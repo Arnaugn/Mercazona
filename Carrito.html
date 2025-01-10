@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - Mercazona</title>
+    <link rel="stylesheet" href="Carrito.css">
+    <body>
+        <header class="header">
+            <nav class="nav">
+                <!-- Sección izquierda -->
+                <div class="nav-left">
+                    <h1>Mercazona</h1>
+                    <a href="index.html">
+                        <img src="imagenes/logo.png" alt="logo">
+                    </a>
+                </div>
+    
+                <!-- Sección derecha -->
+                <div class="nav-right">
+                    <a href="index.html">Inicio</a>
+                    <a href="Productos.html">Productos</a>
+                    <a href="sobre_nosotros.html">Sobre Nosotros</a>
+                    <a href="Contacto.html">Contacto</a>
+                </div>
+            </nav>
+        </header>
+    
+        <div class="main-content">
+            <div class="carrito-contenedor">
+                <!-- Parte izquierda: Productos -->
+                <div class="productos-container" id="carrito-items">
+                    <!-- Los productos se generarán aquí dinámicamente -->
+                </div>
+    
+                <!-- Parte derecha: Resumen y acciones -->
+                <div class="resumen-container">
+                    <div class="total-container">
+                        <h3>Total:</h3>
+                        <p id="total">0,00 €</p>
+                    </div>
+                    <div class="descuento">
+                        <label for="codigo-descuento">Código de descuento:</label>
+                        <input type="text" id="codigo-descuento" placeholder="Introduce tu código">
+                        <button onclick="aplicarDescuento()">Aplicar</button>
+                        <p id="mensaje-descuento"></p>
+                    </div>
+                    <div class="acciones">
+                        <button onclick="irAPagar()">Pagar</button>
+                        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <footer>
+            <p>Síguenos en nuestras redes sociales para estar al día:</p>
+            <div class="footer-images">
+                <a href="https://www.x.com" target="_blank">
+                    <img src="imagenes/twitter.png" alt="twitter">
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="imagenes/Instagram.jpeg" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="imagenes/facebook.png" alt="Facebook">
+                </a>
+            </div>
+        </footer>
+    </body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    cargarCarrito();
+});
+
+function cargarCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const carritoItems = document.getElementById('carrito-items');
+    const totalElement = document.getElementById('total');
+    let total = 0;
+
+    carritoItems.innerHTML = '';
+
+    carrito.forEach(producto => {
+        const item = document.createElement('div');
+        item.classList.add('carrito-item');
+        item.innerHTML = `
+            <img src="${producto.imagen}" alt="${producto.nombre}" style="width: 80px; height: 80px; margin-right: 10px;">
+            <div>
+                <h4>${producto.nombre}</h4>
+                <p>${producto.cantidad} x ${(producto.precioTotal / producto.cantidad).toFixed(2)} €</p>
+            </div>
+            <div>
+                <strong>${producto.precioTotal.toFixed(2)} €</strong>
+                <button onclick="eliminarProducto('${producto.nombre}')">Eliminar</button>
+            </div>
+        `;
+        carritoItems.appendChild(item);
+        total += producto.precioTotal;
+    });
+
+    totalElement.textContent = `${total.toFixed(2)} €`;
+}
+
+
+function eliminarProducto(nombre) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito = carrito.filter(producto => producto.nombre !== nombre);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    cargarCarrito();
+}
+
+function vaciarCarrito() {
+    localStorage.removeItem('carrito');
+    cargarCarrito();
+}
+
+function aplicarDescuento() {
+    const codigo = document.getElementById('codigo-descuento').value;
+    const mensaje = document.getElementById('mensaje-descuento');
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let total = 0;
+
+    carrito.forEach(producto => {
+        total += producto.precioTotal;
+    });
+
+    if (codigo === '4004') {
+        const descuento = total * 0.05;
+        const nuevoTotal = total - descuento;
+        document.getElementById('total').textContent = `${nuevoTotal.toFixed(2)} € (5% descuento aplicado)`;
+        mensaje.textContent = 'Código de descuento aplicado correctamente.';
+        mensaje.style.color = 'green';
+    } else {
+        mensaje.textContent = 'Código de descuento inválido.';
+        mensaje.style.color = 'red';
+    }
+}
+
+function irAPagar() {
+    const total = document.getElementById("total").textContent.replace("€", "").trim();
+    localStorage.setItem("total", total); // Guardar el total en localStorage
+    window.location.href = "pago.html"; // Redirigir a la página de pago
+}
+
+
+    </script>
+</body>
+</html>

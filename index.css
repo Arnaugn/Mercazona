@@ -1,0 +1,434 @@
+/* Homepage */
+body{
+position: relative;
+height: 1000px;
+display: flex; 
+margin: 0;
+font-family: Arial, sans-serif;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding-top: 200px; /* Añade espacio superior */
+ background-color: #eef2f7;            
+}
+/* Header */
+.header{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    }
+    /* Estilos para el nav */
+    .nav {
+        display: flex;
+        height: 150px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-image: url('imagenes/banner.jpg');
+        background-size: cover;
+        background-position: center;
+        color: white;
+    }
+    /* Logo e imagen a la izquierda */
+    .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .nav-left img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    /* Botones de la derecha */
+    .nav-right {
+        display: flex;
+        gap: 12px;
+    }
+    /* Botones de la derecha */
+    .nav-right a {
+        text-decoration: none;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        background: linear-gradient(90deg, red, orange, yellow, green, blue, purple);
+        background-size: 400% 400%;
+        animation: gradientAnimation 5s ease infinite;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .nav-right a:hover {
+        transform: scale(1.1);
+    }
+    @keyframes gradientAnimation { /*botones arriba derecha*/
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }   
+/* Mercazona, calidad y buen precio a la orden del día */
+.titulo{
+position: absolute;
+height: 100px;
+left: 0px;
+right: 0px;
+display: flex;
+justify-content: center;
+align-items: center;
+top: 150px;
+background-color: #d3d3d3; /* Light gray */
+font-family: 'Newsreader';
+font-weight: 400;
+font-size: 64px;
+color: #000000;
+}
+.texto1{
+    position: absolute;
+    height: 154px;
+    left: 217px;
+    right: 203px;
+    top: 280px;
+    font-family: 'Newsreader';
+    font-weight: 400;
+    font-size: 64px;
+    text-align: center;
+    animation: pulse 2s infinite;
+    color: red;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Contenedor de botones */
+.button1-row {
+    display: flex;
+    gap: 20px; /* Espaciado entre botones */
+    position: absolute;
+    top: 38%; /* Ajusta la altura relativa */
+    left: 50%;
+    transform: translateX(-50%);
+}
+.button1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    height: 230px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    background-color: #ffffff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none; /* Quitar subrayado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s;
+}
+.button1 img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.button1:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+}
+/* Boton tienda */
+.button-container {
+    position: absolute; /* Fuera del flujo normal */
+    top: 70%; /* Ajusta la posición vertical */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    background-color: #32681d;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s;
+    text-decoration: none; /* Elimina subrayado */
+}
+.button img {
+    border-radius: 10px;
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+}
+/* Efecto hover: agrandar, sombra y color de fondo */
+.button:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #389c2b;
+}
+/* Añadimos una animación de brillo */
+.button::before {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-30deg);
+    transition: left 0.3s;
+}
+.button:hover::before {
+    left: 100%;
+}
+/* Animación adicional en la imagen */
+.button img {
+    transition: transform 0.3s ease-in-out;
+}
+.button:hover img {
+    transform: rotate(20deg);
+}
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }  
+    .banner-container {
+        position: relative;
+        width: 100%; /* Aumenté el ancho */
+        max-width: 1400px; /* Ancho máximo del contenedor */
+        overflow: hidden;
+        border-radius: 15px; /* Bordes redondeados más pronunciados */
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombras mejoradas */
+        margin-top: 1000px; /* Para colocar más abajo las imágenes */
+    }   
+    .banner-images {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }  
+    .banner-images img {
+        width: 1400px; /* Cada imagen ocupa el ancho completo del contenedor */
+        height: 490px; /* Ajusta al contenedor */
+    }
+    .nav-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 15px; /* Botones más grandes */
+        cursor: pointer;
+        border-radius: 70%;
+    }   
+    .nav-button.left {
+        left: 20px; /* Botón más separado del borde izquierdo */
+    }    
+    .nav-button.right {
+        right: 20px; /* Botón más separado del borde derecho */
+    }
+    .banner-text {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 20px;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Mejora la visibilidad sobre las imágenes */
+        z-index: 5; /* Asegúrate de que el texto esté encima de las imágenes */
+    }  
+  /* Nuestros Productos */
+.believe {
+    position: absolute;
+    left: 0px;
+    bottom: 433px;
+    font-family: 'Inter';
+    font-size: 26px;
+    color: #000000;
+    }   
+/*texto de nuestros productos*/
+.food-section {
+    position: absolute;
+    background-color: #4CAF50; /* Fondo verde */
+    height: 420px;
+    left: 0%;
+    right: 0%;
+    top: 1150px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+
+    margin-top: 300px; /* Espacio adicional entre secciones */
+}
+.food-list {
+    font-size: 1.5em;
+    line-height: 3;
+}
+.food-section img {
+    max-width: 300px; /* Ajusta el tamaño máximo de la imagen */
+    border-radius: 10px;
+}
+/*footer*/
+    footer {
+        height: 200px;
+        position: absolute;
+        top: 1870px;
+        background-color: #333; /* Gris oscuro */
+        color: white;
+        display: flex;
+        flex-direction: column; /*texto arriba, fotos abajo*/
+        align-items: center; /*centra en vertical*/
+        justify-content: center; /*centra en horizontal*/
+        width: 100%; /* Ocupa todo el ancho */
+    }       
+    .footer-images {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px; /*separa del texto*/
+    }
+    .footer-images img {
+        width: 50px; /* Tamaño pequeño */
+        height: 50px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: transform 0.4s ease;
+    }
+    .footer-images img:hover {
+        transform: scale(1.2); /* Aumenta ligeramente al pasar el mouse */
+    }
+/*cookies*/
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+    display: none; /* Por defecto oculto */
+}
+.cookie-banner button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.cookie-banner button:hover {
+    background-color: #45a049;
+}
+
+/*Responsive*/
+@media (max-width: 768px) {
+    body {
+        padding-top: 100px; /* Ajusta el padding superior en móviles */
+    }
+    .nav {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+    }
+    .nav-left, .nav-right {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav-left img {
+        width: 40px;
+        height: 40px;
+    }
+    .titulo {
+        font-size: 32px; /* Reduce el tamaño de la fuente en móvil */
+        top: 280px;
+        text-align: center;
+    }
+    .texto1 {
+        font-size: 28px; /* Reduce el tamaño de la fuente */
+        top: 420px;
+        left: 150px;
+    }
+    .button1-row {
+        top: 450px;
+        flex-direction: row;
+        gap: 15px;
+        width: 70%; /* Ocupa todo el ancho del contenedor */
+        padding: 10px;
+    }
+    .button1 {
+        width: auto; /* Botones más anchos */
+        height: auto; /* Ajusta la altura automáticamente */
+    }
+    .button1 img {
+        height: 60px; /* Ajusta el tamaño de las imágenes */
+    }
+    .banner-container {
+        height: 300px; /* Reduce la altura del banner */
+        width: 400px;
+    }
+    .banner-images img {
+        height: 200px;
+        width: 400px;
+        object-fit: cover; /* Se adapta al contenedor sin deformarse */
+    }
+    .food-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        width: auto;
+    }
+    .food-section img {
+        width: 80%;
+        height: auto; /* Mantén proporciones */
+    }
+    .believe {
+        bottom: 1100px;
+    }
+    footer {
+        top: 2533px;
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-images img {
+        width: 40px; /* Imágenes de redes sociales más pequeñas */
+    }  
+    .titulo {
+        font-size: 24px;
+    }
+
+    .texto1 {
+        font-size: 18px;
+    }
+
+    .button1 {
+        width: auto;
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .banner-container {
+        height: auto;
+    }
+
+    .food-section {
+        padding: 10px;
+    }
+
+    .food-section img {
+        max-width: 200px;
+    }
+}
+
+
+  
+

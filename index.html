@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Language" content="es"> <!-- Para poner la página en español -->
+    <meta charset="UTF-8"><!-- Codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Hacerlo responsive -->
+    <meta name="description" content="Página de inicio de Mercazona"> <!-- Descripción de la página -->
+    <meta name="keywords" content="Mercazona, ofertas, productos, carne, pescado, vegetales"> <!-- Palabras clave para SEO -->
+    <meta name="author" content="Arnau González Nieto"> <!-- Autor de la página -->
+    <meta property="og:title" content="Mercazona"> <!-- Título para redes sociales -->
+    <meta property="og:description" content="Página de inicio de Mercazona"> <!-- Descripción para redes sociales -->
+    <meta property="og:type" content="tienda online"> <!-- Tipo de contenido -->
+    <meta name="twitter:card" content="summary_large_image"> <!-- Tarjeta grande para Twitter -->
+    <meta name="twitter:title" content="Página de inicio de Mercazona"> <!-- Título para Twitter -->
+    <meta name="twitter:description" content="Página web de inicio sobre Mercazona, ofertas y de más! "> <!-- Descripción para Twitter -->
+    <title>Mercazona</title> <!-- Título -->
+    <link rel="stylesheet" href="index.css"> <!-- Estilos -->
+    <link rel="icon" href="imagenes/logo.png" type="image/png"> <!-- Favicon -->
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <!-- Sección izquierda -->
+            <div class="nav-left">
+                <h1>Mercazona</h1> <!-- Título izquierda --> 
+                <img src="imagenes/logo.png" alt="Logo"> <!-- Logo izquierda con link inicio -->  
+            </div>
+            <!-- Sección derecha -->
+            <div class="nav-right">
+                <a href="Productos.html">Productos</a> <!-- Redirige a productos -->
+                <a href="sobre_nosotros.html">Sobre Nosotros</a> <!-- Redirige a Sobre Nosotros -->
+                <a href="Contacto.html">Contacto</a> <!-- Redirige a Contacto -->
+                <a href="Carrito.html">Carrito</a> <!--no funcionan por el momento-->
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="main-content">
+            <h2 class="titulo">Mercazona, calidad y buen precio a la orden del día</h2> <!-- Título gris con eslogan-->
+            <h3 class="texto1">OFERTAS!</h3> <!-- Ofertas -->
+
+            <div class="button1-row">
+                <a href="#" class="button1"> <!--no funcionan por el momento-->
+                    <img src="imagenes/platanos.jpg" alt="Plátanos"> <!-- Imagen oferta platano -->
+                    Plátanos - 2€/kg <!--Descripción producto-->
+                </a>
+                <a href="#" class="button1"> <!--no funcionan por el momento-->
+                    <img src="imagenes/carne_picada.jpg" alt="Carne Picada"> <!-- Imagen oferta carne picada -->
+                    Carne picada - 16€/kg <!--Descripción producto-->
+                </a>
+                <a href="#" class="button1"> <!--no funcionan por el momento-->
+                    <img src="imagenes/merluza.jpg" alt="Merluza"> <!-- Imagen oferta merluza -->
+                    Merluza - 10,99€/kg <!--Descripción producto-->
+                </a>
+            </div>
+
+            <div class="button-container">
+                <a href="Productos.html" class="button"> <!--Botón para buscar en los productos-->
+                    Busca en nuestra tienda <!--texto para buscar en los productos-->
+                    <img src="imagenes/buscador.PNG" alt="Ícono"> <!--Icono buscador-->
+                </a>
+            </div>
+
+            <div class="banner-container"> <!--Container interactivo-->
+                <div class="banner-images"> <!--Imágenes banner-->
+                    <img src="imagenes/carne_picada.jpg" alt="Banner 1"> <!--Imagen 1-->
+                    <img src="imagenes/tomate.jpg" alt="Banner 2"> <!--Imagen 2-->
+                    <img src="imagenes/gambas.jpg" alt="Banner 3"> <!--Imagen 3-->
+                    <img src="imagenes/pollo.jpg" alt="Banner 4"> <!--Imagen 4-->
+                </div>
+                <button class="nav-button left">&lt;</button> 
+                <button class="nav-button right">&gt;</button>
+                <p class="banner-text" id="banner-text">Carne picada de vacuno y de cerdo, 100% ibérica, criados en Extremadura</p> <!--Texto interactivo-->
+            </div>
+        </section>
+        <section class="food-section"><!--Container de la lista-->
+            <ul class="food-list"> <!--Lista productos-->
+                <li><strong>Vegetales:</strong> Naranjas, limas, limones, guayabas, zanahorias, pepinos, jícamas, coliflores, coles de Bruselas, chalotes, berenjenas japonesas, espárragos, alcachofas...</li>
+                <li><strong>Carne:</strong> Ternera, cerdo, pollo, pavo, entre otros.</li>
+                <li><strong>Pescado:</strong> Lubinas, gambas, mejillones, almejas...</li>
+                <li><strong>Otros:</strong> Dulces, comida rápida, productos de limpieza...</li>
+            </ul>
+            <img src="imagenes/alimentos.jpg" alt="Imagen de alimentos"><!--Imagen cesta de alimentos-->
+            <h3 class="believe">Nuestros Productos</h3> <!--Nuestros productos-->
+        </section>
+    </main>
+
+    <footer>
+        <p> © 2024 Mercazona, Inc. Todos los derechos reservados</p> 
+        <p>Síguenos en nuestras redes sociales: </p> <!--Texto footer-->
+        <div class="footer-images"> <!--Imagenes footer-->
+            <a href="https://www.x.com" target="_blank"> <!--link twitter-->
+                <img src="imagenes/twitter.png" alt="Twitter"> <!--imagen twitter-->
+            </a>
+            <a href="https://www.instagram.com" target="_blank"> <!--link instagram-->
+                <img src="imagenes/Instagram.jpeg" alt="Instagram"> <!--imagen instagram-->
+            </a>
+            <a href="https://www.facebook.com" target="_blank"> <!--link facebook-->
+                <img src="imagenes/facebook.png" alt="Facebook"> <!--imagen facebook-->
+            </a>
+        </div>
+    </footer>
+
+    <div class="cookie-banner" id="cookieBanner">
+        <p>Usamos cookies para mejorar tu experiencia. Consulta nuestra <a href="politica_priv.html" style="color: #4CAF50;">Política de Privacidad</a>.</p>
+        <button onclick="acceptCookies()">Aceptar</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (!localStorage.getItem("cookiesAccepted")) {
+                document.getElementById("cookieBanner").style.display = "block";
+            }
+        });
+
+        function acceptCookies() {
+            localStorage.setItem("cookiesAccepted", "true");
+            document.getElementById("cookieBanner").style.display = "none";
+        }
+
+        const imagesContainer = document.querySelector('.banner-images');
+        const images = document.querySelectorAll('.banner-images img');
+        const leftButton = document.querySelector('.nav-button.left');
+        const rightButton = document.querySelector('.nav-button.right');
+        const bannerText = document.getElementById('banner-text');
+
+        const texts = [
+            "Carne picada de vacuno y de cerdo, 100% ibérica, criados en Extremadura",
+            "Tomates cultivados en la vera del Guadalquivir",
+            "Gambas pescadas en el Mar Mediterráneo",
+            "Pollos cuidados en el Norte de Ávila"
+        ];
+
+        let currentIndex = 0;
+        const updateBanner = () => {
+            imagesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            bannerText.textContent = texts[currentIndex];
+        };
+
+        const nextImage = () => {
+            currentIndex = (currentIndex + 1) % texts.length;
+            updateBanner();
+        };
+
+        const prevImage = () => {
+            currentIndex = (currentIndex - 1 + texts.length) % texts.length;
+            updateBanner();
+        };
+
+        let autoSlide = setInterval(nextImage, 4000);
+
+        rightButton.addEventListener('click', () => {
+            clearInterval(autoSlide);
+            nextImage();
+            autoSlide = setInterval(nextImage, 4000);
+        });
+
+        leftButton.addEventListener('click', () => {
+            clearInterval(autoSlide);
+            prevImage();
+            autoSlide = setInterval(nextImage, 4000);
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
